@@ -1,8 +1,8 @@
 import Card from "../../components/Card";
 import Banner from "../../components/Banner";
 import Title from "../../components/Title";
-import videos from "../../json/db.json"
 import styled from "styled-components";
+import { useEffect, useState } from "react";
 
 const Container = styled.section`
   display: flex;
@@ -10,6 +10,14 @@ const Container = styled.section`
 `
 
 const Home = () => {
+  const [videos, setVideos] = useState([])
+
+  useEffect(() => {
+    fetch('https://my-json-server.typicode.com/wensch/cinetag-api/videos')
+      .then(response => response.json())
+      .then(data => setVideos(data))
+  }, [])
+
   return(
     <>
       <Banner image="home" />

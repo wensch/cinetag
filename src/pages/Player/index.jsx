@@ -1,9 +1,9 @@
 import Title from "../../components/Title"
 import Banner from "../../components/Banner"
 import styled from "styled-components"
-import videos from "../../json/db.json"
 import { useParams } from "react-router-dom"
 import NotFound from "../NotFound"
+import { useEffect, useState } from "react"
 
 const Container = styled.section`
   display: flex;
@@ -16,7 +16,13 @@ const Container = styled.section`
 
 const Payler = () => {
   const params = useParams();
-  const video = videos.find(item => item.id === Number(params.id))
+  const [video, setVideo] = useState([])
+
+  useEffect(() => {
+    fetch(`https://my-json-server.typicode.com/wensch/cinetag-api/videos/${params.id}`)
+      .then(response => response.json())
+      .then(data => setVideo(data))
+  }, [params])
   
   if (!video) {
     return <NotFound />
