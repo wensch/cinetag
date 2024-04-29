@@ -6,20 +6,27 @@ import { useFavoriteContext } from "../../Context/Favorites"
 
 const Container = styled.section`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 `
 
 const Favorites = () => {
-  const {favorite} = useFavoriteContext();
+  const {favoriteSaved} = useFavoriteContext();
+
+  
+
   return (
     <>
       <Banner image="favoritos" />
       <Title>
         <h1>Meus Favoritos</h1>
+
       </Title>
       <Container>
+        {favoriteSaved.length === 0 &&
+          <h2>Nenhum favorito encontrado</h2>
+        }
         {
-          favorite.map((item) => {
+          favoriteSaved.map((item) => {
             return <Card key={item.id} id={item.id} title={item.title} photo={item.photo}/>
           })
         }

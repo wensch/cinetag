@@ -18,23 +18,27 @@ export default function FavoritesProvider({children}) {
 
 export function useFavoriteContext() {
   const { favorite, setFavorite } = useContext(FavoritesContext)
+  const favoriteSaved = localStorage.getItem('favoriteSaved') ? JSON.parse(localStorage.getItem('favoriteSaved')) : favorite 
 
   function addFavorite(newFavorite) {
-    const sameFavorite = favorite.some(item => item.id === newFavorite.id)
+    const sameFavorite = favoriteSaved.some(item => item.id === newFavorite.id)
 
-    let list = [...favorite]
+    let list = [...favoriteSaved]
 
     if (!sameFavorite) {
       list.push(newFavorite)
+      localStorage.setItem('favoriteSaved', JSON.stringify(list))
       return setFavorite(list)
     }
 
     list.splice(list.indexOf(newFavorite), 1)
+    localStorage.removeItem('favoriteSaved')
+    localStorage.setItem('favoriteSaved', JSON.stringify(list))
     return setFavorite(list)
   }
 
   return {
-    favorite,
+    favoriteSaved,
     addFavorite
   }
 }

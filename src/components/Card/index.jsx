@@ -44,8 +44,8 @@ const Favorite = styled.img`
 
 
 const Card = ({id, title, photo}) => {
-  const {favorite, addFavorite } = useFavoriteContext();
-  const isFavorite = favorite.some(item => item.id === id)
+  const {favoriteSaved, addFavorite } = useFavoriteContext();
+  const isFavorite = favoriteSaved.some(item => item.id === id)
 
   return (
     <CardStyle>

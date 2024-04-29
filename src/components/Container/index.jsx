@@ -5,6 +5,7 @@ const ContainerStyle = styled.section`
     max-width: 1200px;
     margin: 2em auto;
     text-align: center;
+    gap: 24px;
 
     @media (max-width: 1200px) {
       padding-inline: 40px;
