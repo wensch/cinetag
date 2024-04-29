@@ -9,6 +9,16 @@ const HeaderStyle = styled.header`
   align-items: center;
   padding: 1.1em 20em;
   background-color: var(--preto);
+
+  @media (max-width: 1200px) {
+    padding-inline: 40px;
+  }
+
+  @media (max-width: 719px) {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+  }
 `
 
 const Header = () => {

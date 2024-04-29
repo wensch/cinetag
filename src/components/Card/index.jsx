@@ -14,6 +14,14 @@ const CardStyle = styled.div`
   flex-direction: column;
   justify-content: space-between;
 
+  @media (max-width: 1200px) {
+    width: calc((100% / 2) - 12px);
+  }
+
+  @media (max-width: 719px) {
+    width: 100%;
+  }
+
   h2 {
     padding: 0 1em;
     color: var(--preto);

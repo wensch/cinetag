@@ -5,6 +5,12 @@ const ContainerStyle = styled.section`
     max-width: 1200px;
     margin: 2em auto;
     text-align: center;
+
+    @media (max-width: 1200px) {
+      padding-inline: 40px;
+      flex-wrap: wrap;
+      row-gap: 24px;
+    }
   }
 `
 

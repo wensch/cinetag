@@ -10,7 +10,7 @@ const Container = styled.section`
 `
 
 const Favorites = () => {
-  const {favorite } = useFavoriteContext();
+  const {favorite} = useFavoriteContext();
   return (
     <>
       <Banner image="favoritos" />
@@ -18,9 +18,11 @@ const Favorites = () => {
         <h1>Meus Favoritos</h1>
       </Title>
       <Container>
-        {favorite.map((item) => {
+        {
+          favorite.map((item) => {
             return <Card key={item.id} id={item.id} title={item.title} photo={item.photo}/>
-        })}
+          })
+        }
       </Container>      
     </>
   )

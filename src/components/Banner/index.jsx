@@ -6,6 +6,11 @@ const Cover = styled.div`
   height: 347px;
   background-size: cover;
   background-repeat: no-repeat;
+  
+  @media (max-width: 1200px) {
+    height: 240px;
+    background-position-x: center;
+  }
 `
 
 const Banner = ({image}) => { 
