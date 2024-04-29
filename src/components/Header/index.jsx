@@ -19,7 +19,7 @@ const Header = () => {
       </Link>
       <nav>
         <HeaderLink url="./">Home</HeaderLink>
-        <HeaderLink url="/favoritos">Favoritos</HeaderLink>
+        <HeaderLink url="/favorites">Favoritos</HeaderLink>
       </nav>
     </HeaderStyle>
   )

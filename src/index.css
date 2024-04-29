@@ -18,3 +18,8 @@
   --preto: #000000;
   --cinza: #E2E2E2;
 }
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
