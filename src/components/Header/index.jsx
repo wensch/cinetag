@@ -8,7 +8,7 @@ const HeaderStyle = styled.header`
   justify-content: space-between;
   align-items: center;
   padding: 1.1em 20em;
-  background-color: var(--preto);
+  background-color: #0C120C;
 
   @media (max-width: 1200px) {
     padding-inline: 40px;

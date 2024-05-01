@@ -9,7 +9,7 @@ const CardStyle = styled.div`
   padding: 0 0 1em 0;
   margin-top: .5em;
   width: 282px;
-  background-color: var(--cinza);
+  background-color: ${props => props.theme.cardBg};
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -24,7 +24,7 @@ const CardStyle = styled.div`
 
   h2 {
     padding: 0 1em;
-    color: var(--preto);
+    color: ${props => props.theme.fontColor};
     text-align: left;
   }
 
